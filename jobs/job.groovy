@@ -1,3 +1,8 @@
+folder("ABCDE") {
+    displayName("ABCDE")
+    description('Folder for project ABCDE')
+}
+
 job('demo') {
     steps {
         shell('echo Hello World!')
