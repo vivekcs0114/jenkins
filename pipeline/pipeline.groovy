@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  parameters {
+    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+  }
+
   environment {
     // FOO will be available in entire pipeline
     FOO = "PIPELINE"
@@ -13,6 +17,7 @@ pipeline {
         BAR = "STAGE"
       }
       steps {
+        echo "Hello ${params.PERSON}"
         sh 'echo "FOO is $FOO and BAR is $BAR"'
       }
     }
