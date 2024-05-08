@@ -1,2 +1,2 @@
 @Library('deployer') _
-welcomeJob 'vivek'
+welcomeJob 'lambdatest'
