@@ -5,7 +5,7 @@ Microservice:
       branches:
         "(main|feature/*)":
           "Deploy":
-            filename: "JenkinsFile"
+            filename: "Jenkinsfile"
     "pong":
       branches:
         "(main|feature/*)":
