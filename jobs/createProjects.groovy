@@ -15,12 +15,14 @@ def createFolder(project, display, repos) {
 
 def createMultiBranchPipeline(project, repo, folder, url) {
     multibranchPipelineJob("$project/$repo/$folder") {
-        branchSource {
-            source {
-                git {
-                    repoOwner(project)
-                    repository(repo)
-                    serverUrl(url)
+        branchSources {
+            branchSource {
+                source {
+                    git {
+                        repoOwner(project)
+                        repository(repo)
+                        serverUrl(url)
+                    }
                 }
             }
         }
