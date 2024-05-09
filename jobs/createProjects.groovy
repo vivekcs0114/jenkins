@@ -21,8 +21,10 @@ def createMultiBranchPipeline(project, repo, folder, url) {
                     gitSCMSource {
                         remote(url)
                         id(repo)
-                        branchDiscoveryTrait {
-                            strategyId(1)
+                        traits {
+                            branchDiscoveryTrait {
+                                strategyId(1)
+                            }
                         }
                     }
                 }
