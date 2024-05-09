@@ -2,10 +2,10 @@ import org.yaml.snakeyaml.Yaml
 
 def projects = ['Microservice']
 
-def createFolder(project, displayName, repos) {
+def createFolder(project, display, repos) {
     folder(project) {
-        displayName(displayName)
-        description(displayName)
+        displayName(project)
+        description(display)
     }
 
     for (repo in repos){
@@ -31,11 +31,11 @@ for (projectName in projects) {
     def yaml = new Yaml();
     def file =  readFileFromWorkspace("${projectName}.yaml");
     def fileYaml = yaml.load("${file}");
-    def displayName = fileYaml."$projectName".displayName
+    def display = fileYaml."$projectName".display
     def repositories = fileYaml."$projectName".repositories
     def repos = repositories.keySet() as List
 
-    createFolder(projectName, displayName, repos)
+    createFolder(projectName, display, repos)
 
     for (item in repositories) {
         def repoName = item.getKey().toString()
