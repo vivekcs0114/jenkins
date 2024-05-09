@@ -1,5 +1,5 @@
 Microservice:
-  displayName: Microservice App
+  displayName: "Microservice App"
   repositories:
     "ping":
       branches:
