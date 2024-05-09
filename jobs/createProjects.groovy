@@ -19,7 +19,6 @@ def createMultiBranchPipeline(project, repo, folder, url) {
             branchSource {
                 source {
                     git {
-                        repoOwner(project)
                         repository(repo)
                         serverUrl(url)
                     }
