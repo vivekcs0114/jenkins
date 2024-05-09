@@ -1,0 +1,13 @@
+Microservice:
+  displayName: Microservice App
+  repositories:
+    "ping":
+      branches:
+        "(main|feature/*)":
+          "Deploy":
+            filename: "JenkinsFile"
+    "pong":
+      branches:
+        "(main|feature/*)":
+          "Deploy":
+            filename: "JenkinsFile"
