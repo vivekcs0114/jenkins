@@ -11,3 +11,9 @@ Microservice:
         "(main|feature/*)":
           "Deploy":
             filename: "build/Jenkinsfile"
+            parameters:
+              - string:
+                  name: "App Name"
+                  default: ""
+                  description: "Name of the application"
+
