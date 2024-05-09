@@ -22,9 +22,7 @@ def createMultiBranchPipeline(project, repo, folder, url) {
                         remote(url)
                         id(repo)
                         traits {
-                            gitBranchDiscovery {
-                                strategyId(1)
-                            }
+                            gitBranchDiscovery()
                         }
                     }
                 }
