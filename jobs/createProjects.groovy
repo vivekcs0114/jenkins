@@ -18,10 +18,11 @@ def createMultiBranchPipeline(project, repo, folder, url) {
         branchSources {
             branchSource {
                 source {
-                    git {
-                        repository(repo)
-                        serverUrl(url)
+                    gitSCMSource {
+                        remote(url)
+                        id(repo)
                     }
+
                 }
             }
         }
