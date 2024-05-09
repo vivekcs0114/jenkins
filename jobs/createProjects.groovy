@@ -42,7 +42,7 @@ for (projectName in projects) {
     for (item in repositories) {
         def repoName = item.getKey().toString()
         def branchMap = repositories[repoName]['branches']
-        def gitUrl = "https://github.com/vivekcs0114${repoName}.git"
+        def gitUrl = "https://github.com/vivekcs0114/${repoName}.git"
 
         for (branch in branchMap) {
             def branchName = branch.getKey()
