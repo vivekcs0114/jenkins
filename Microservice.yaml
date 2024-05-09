@@ -10,4 +10,4 @@ Microservice:
       branches:
         "(main|feature/*)":
           "Deploy":
-            filename: "build/JenkinsFile"
+            filename: "build/Jenkinsfile"
