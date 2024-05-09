@@ -28,9 +28,6 @@ def createMultiBranchPipeline(project, repo, folder, url, filePath) {
                 }
             }
         }
-        parameters {
-            stringParam('myParameterName', 'my default stringParam value', 'my description')
-        }
         factory {
             workflowBranchProjectFactory {
                 scriptPath(filePath)
