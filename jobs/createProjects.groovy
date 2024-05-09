@@ -14,7 +14,7 @@ def createFolder(project, display, repos) {
 }
 
 def createMultiBranchPipeline(project, repo, folder, url) {
-    multiBranchPipelineJob("$project/$repo/$folder") {
+    multibranchPipelineJob("$project/$repo/$folder") {
         branchSource {
             source {
                 git {
