@@ -28,12 +28,8 @@ def createMultiBranchPipeline(project, repo, folder, url, filePath) {
                 }
             }
         }
-        properties {
-            parameters([
-                string(name: 'submodule', defaultValue: ''),
-                string(name: 'submodule_branch', defaultValue: ''),
-                string(name: 'commit_sha', defaultValue: ''),
-            ])
+        parameters {
+            stringParam('myParameterName', 'my default stringParam value', 'my description')
         }
         factory {
             workflowBranchProjectFactory {
