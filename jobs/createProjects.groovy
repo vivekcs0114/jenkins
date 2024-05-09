@@ -13,7 +13,7 @@ def createFolder(project, display, repos) {
     }
 }
 
-def createMultiBranchPipeline(project, repo, folder, url) {
+def createMultiBranchPipeline(project, repo, folder, url, filePath) {
     multibranchPipelineJob("$project/$repo/$folder") {
         branchSources {
             branchSource {
@@ -26,6 +26,11 @@ def createMultiBranchPipeline(project, repo, folder, url) {
                         }
                     }
                 }
+            }
+        }
+        factory {
+            workflowBranchProjectFactory {
+                scriptPath(filePath)
             }
         }
     }
@@ -55,7 +60,7 @@ for (projectName in projects) {
                 def filePath = repositories[repoName]['branches'][branchName][folderName].filename
                 def branches = branchName.replaceAll("[()]", "").replaceAll("|", " ")
 
-                createMultiBranchPipeline(projectName, repoName, folderName, gitUrl)
+                createMultiBranchPipeline(projectName, repoName, folderName, gitUrl, filePath)
             }
         }
     }
