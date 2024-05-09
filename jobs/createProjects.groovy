@@ -15,6 +15,9 @@ def createFolder(project, display, repos) {
 
 def createMultiBranchPipeline(project, repo, folder, url, filePath) {
     multibranchPipelineJob("$project/$repo/$folder") {
+        parameters {
+            stringParam('name', 'default stringParam value', 'description')
+        }
         branchSources {
             branchSource {
                 source {
